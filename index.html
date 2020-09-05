@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try- jquery</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/0bca8ac1eb.js" crossorigin="anonymous"></script>
+    <style>
+        body{
+            
+            max-width: 1400px;
+            display: flex;
+        }
+        div, textarea,h4{
+            margin: 0px;
+            padding: 0px;
+        }
+        .textarea{
+            /* display: flex; */
+            width: 700px;
+            margin: 0px auto;
+            border: 5px dotted grey;
+            /* text-align:center; */
+        }
+        #your-name{
+            margin-left: 15px;
+            width: 650px;
+            padding: 10px;
+            border: 0.5px solid rgba(0, 0, 0, 0.664);
+            border-bottom: none;
+        }
+        .textarea textarea{
+            height: 80px;
+            width: 650px;
+            resize: none;
+            margin: 0px 15px 0px 15px;
+            padding: 10px;
+            border: 0.5px solid rgba(0, 0, 0, 0.664);
+        } 
+        h2{
+            text-transform: uppercase;
+            text-align: center;
+        }
+        .textarea-bottom{
+            height: 30px;
+            width: 670px;
+            border: 0.5px solid rgba(0, 0, 0, 0.664);
+            border-top: none;
+            margin: 0px 15px 10px 15px;
+        }
+        .textarea-bottom ul{
+            display: flex;
+            text-decoration: none;
+            list-style: none;
+            padding: 0px 10px;
+        }
+        .textarea-bottom ul li{
+            flex: 3;
+            float: left;
+            font-size: 25px;
+            margin: 0px; 
+            cursor: pointer;
+        }
+        .textarea-bottom ul button{
+            flex: 1;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: black;
+        }
+        .postarea{
+            width: 650px;
+            height: auto;
+            margin: 30px 15px 0px 15px;
+            border: 0.5px solid black;
+            padding: 10px;
+        }
+        #name{
+            text-transform: capitalize;
+        }
+        #text-post{
+            border-top: 1px solid grey;
+            padding-top: 20px;
+            color: royalblue;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="textarea">
+        <h2>Write and post</h2>
+        <div class="text-form">
+            <input type="text" placeholder="your name" id="your-name">
+            <textarea id="text" placeholder="What's on your mind"></textarea>
+            <form class="textarea-bottom">
+                <ul>
+                    <li><i class="fas fa-camera"></i></li>
+                    <li><i class="far fa-image"></i></li>
+                    <li><i class="fas fa-italic"></i></li>
+                    <li><i class="fas fa-bold"></i></li>
+                    <button id = "post" type="submit" >POST</button>
+                </ul>
+            </form>
+        </div>
+        <div class="postarea">
+            <h4 id="name">Saksham </h4>
+            <p id="text-post">k xa khabar</p>
+
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $("#post").click(function(){
+                var text = $('#text').val();
+                var name = $('#your-name').val();
+                $("#name").text(name);
+                $("#text-post").text(text);
+            });
+        });
+    </script>
+</body>
+</html>
